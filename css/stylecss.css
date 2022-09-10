@@ -1,0 +1,61 @@
+.gridIndex {
+  display: grid;
+  grid-template-columns: 10% 70% 20%;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "nav header header" "nav section1 aside" "nav section2 aside" "nav footer footer"; }
+  .gridIndex header {
+    grid-area: header; }
+  .gridIndex .section1 {
+    grid-area: section1; }
+  .gridIndex .section2 {
+    grid-area: section2; }
+  .gridIndex aside {
+    grid-area: aside; }
+  .gridIndex footer {
+    grid-area: footer; }
+  .gridIndex nav {
+    grid-area: nav; }
+
+.border {
+  border: 1px solid crimson; }
+
+body {
+  background-image: url("../assets/vintage-wallpaper.webp");
+  color: whitesmoke; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: whitesmoke; }
+
+ul {
+  list-style: none; }
+
+.gridIndex header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+
+.gridIndex nav {
+  display: flex;
+  flex-flow: column wrap; }
+  .gridIndex nav ul {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 60%;
+    padding: 4%;
+    justify-content: space-between;
+    align-items: flex-start; }
+
+.gridIndex footer {
+  display: flex;
+  flex-flow: row wrap; }
+  .gridIndex footer ul {
+    display: flex;
+    flex-flow: row wrap;
+    width: 95%;
+    justify-content: space-between; }
