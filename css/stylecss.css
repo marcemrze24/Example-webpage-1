@@ -1,26 +1,6 @@
-@keyframes appear {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes side {
-  0% {
-    transform: translateX(100%); }
-  50% {
-    transform: translateX(100%); }
-  100% {
-    transform: translate(0%); } }
-
-body .title {
-  animation-name: side;
-  animation-duration: 2s;
-  animation-timing-function: ease-out; }
-
-body .container {
-  animation-name: appear;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out; }
+* {
+  margin: 0;
+  padding: 0; }
 
 body {
   background: radial-gradient(black 3px, transparent 4px), radial-gradient(black 3px, transparent 4px), linear-gradient(#fff 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px), #fff;
@@ -100,6 +80,45 @@ body {
       body .container .footer p {
         padding: 0.2em; }
 
-* {
-  margin: 0;
-  padding: 0; }
+@keyframes appear {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes side {
+  0% {
+    transform: translateX(100%); }
+  50% {
+    transform: translateX(100%); }
+  100% {
+    transform: translate(0%); } }
+
+body .title {
+  animation-name: side;
+  animation-duration: 2s;
+  animation-timing-function: ease-out; }
+
+body .container {
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out; }
+  body .container .related .related-post {
+    background-color: black;
+    transition: transform .5s;
+    transition: background-color .5s; }
+    body .container .related .related-post:hover {
+      transform: scale(1.1);
+      background-color: cornflowerblue; }
+
+@media screen and (max-width: 768px) {
+  body .container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "header" "content" "sidebar" "related" "footer";
+    gap: 20px; }
+    body .container .related {
+      justify-content: center; }
+      body .container .related .related-post {
+        margin-top: 1em; } }

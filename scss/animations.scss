@@ -28,5 +28,16 @@ body {
     animation-name: appear;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
+    .related {
+      .related-post {
+        background-color: black;
+        transition: transform .5s;
+        transition: background-color .5s;
+        &:hover {
+          transform: scale(1.1);
+          background-color: cornflowerblue;
+        }
+      }
+    }
   }
 }

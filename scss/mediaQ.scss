@@ -1,0 +1,22 @@
+@media screen and (max-width: 768px) {
+  body {
+    .container {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas: 
+      "header"
+      "content"
+      "sidebar"
+      "related"
+      "footer";
+      gap: 20px;
+      .related {
+        justify-content: center;
+        .related-post {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+}
