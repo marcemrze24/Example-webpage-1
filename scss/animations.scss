@@ -1,0 +1,32 @@
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes side {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translate(0%);
+  }
+}
+
+body {
+  .title {
+    animation-name: side;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+  }
+  .container {
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+  }
+}
