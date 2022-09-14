@@ -45,7 +45,7 @@ body {
       padding: 1.3em;
       .article {
         padding: 1.3em;
-        background-color: #808e9b;
+        background-color: map-get($backgroundColors, colorArticle);
         color: white;
         margin-top: 0.4em;
         h1 {
@@ -57,14 +57,11 @@ body {
       }
     }
     .sidebar {
-      background-color: #485460;
+      @extend .content;
+      background-color: map-get($backgroundColors, colorAside);
       color: white;
       grid-area: sidebar;
-      border: 1px solid black;
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: center;
-      align-items: center;
+      @include flex(flex, column, wrap, center, center);
       padding: 3.5em 1em;
       max-width: min-content;
       div {
@@ -73,34 +70,21 @@ body {
     }
     .related {
       grid-area: related;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      background:
-      radial-gradient(black 3px, transparent 4px),
-      radial-gradient(black 3px, transparent 4px),
-      linear-gradient(#fff 4px, transparent 0),
-      linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
-      linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
-      #fff;
-      background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
-      background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+      @include flex(flex, row, wrap, space-between, stretch);
+      @extend body;
       .related-post {
         color: white;
         background-color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexCenter;
         height: 15em;
         width: 12em;
       }
     }
     .footer {
+      @extend .content;
       grid-area: footer;
-      border: 1px solid black;
-      background-image: url("../assets/vintage-wallpaper.webp");
+      background-image: map-get($backgroundColors, imageFooter);
       color: white;
-      padding: 1.3em;
       h4 {
         padding: 0.2em;
       }
